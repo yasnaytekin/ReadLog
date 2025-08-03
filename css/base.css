@@ -1,0 +1,32 @@
+/* Genel Ayarlar */
+:root {
+    --primary-color: #6a9acb; /* Açık mavi tonu */
+    --secondary-color: #f0f8ff; /* Çok açık mavi/beyaz */
+    --text-color: #333;
+    --light-text-color: #666;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

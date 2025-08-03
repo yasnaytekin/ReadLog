@@ -1,0 +1,340 @@
+/* Kitap Detay Sayfası Stilleri */
+
+.book-detail-page .main-header .auth-nav .user-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* İkonun genişliği */
+    height: 40px; /* İkonun yüksekliği */
+    border-radius: 50%;
+    background-color: var(--primary-color); /* Taslağa uygun renk */
+    color: white; /* İkon rengi */
+    font-size: 24px; /* İkon boyutu */
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Sağdaki boşluk */
+}
+
+.book-detail-page .main-header .auth-nav .user-icon-link:hover {
+    background-color: #5a8ab8;
+}
+
+/* Ana içerik konteyneri */
+.book-detail-content {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    display: flex;
+    flex-direction: column; /* İçeriği dikey sırala */
+    gap: 40px; /* Bölümler arası boşluk */
+}
+
+/* Kitap bilgileri bölümü */
+.book-info-section {
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlarda sarmalamayı sağla */
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.book-main-details {
+    flex: 2; /* Daha fazla alan kapla */
+    min-width: 300px; /* Minimum genişlik */
+}
+
+.book-title-detail {
+    font-size: 36px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.book-author-detail {
+    font-size: 20px;
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+}
+
+.book-visuals {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Üst kısımlarını hizala */
+    margin-bottom: 20px;
+}
+
+.book-cover-detail.placeholder {
+    width: 180px; /* Kapak görselinin genişliği */
+    height: 270px; /* Kapak görselinin yüksekliği */
+    background-color: #eee;
+    border: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text-color);
+    font-size: 14px;
+    flex-shrink: 0;
+    /* Eğer placeholder içindeki img varsa */
+    padding: 0; /* İç boşluğu kaldır */
+}
+
+/* API'den gelen resim için */
+.book-cover-detail img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Gereksiz boşlukları engelle */
+    object-fit: contain; /* Resmi kutuya sığdırırken oranını koru */
+}
+
+.book-meta {
+    font-size: 16px;
+    color: var(--text-color);
+}
+.book-meta p {
+    margin-bottom: 8px;
+}
+.book-meta strong {
+    color: var(--primary-color);
+}
+
+.book-description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Yıldız Puanlama */
+.star-rating {
+    display: inline-block;
+    font-size: 24px; /* Varsayılan yıldız boyutu */
+    color: #ffc107; /* Yıldız rengi */
+    margin-top: 10px;
+}
+
+.star-rating.static i {
+    margin-right: 2px;
+}
+
+.star-rating.static.small {
+    font-size: 18px; /* Yorumlardaki yıldızların boyutu */
+}
+
+.star-rating i {
+    cursor: pointer; /* Etkileşimli yıldızlarda imleç değişimi */
+}
+
+.average-rating-text {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--light-text-color);
+}
+
+/* Okuma Durumu Butonları */
+.reading-status-buttons {
+    flex: 1; /* Sağ tarafta daha az yer kapla */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end; /* Sağ tarafa hizala */
+}
+
+.reading-status-buttons .btn.status-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 180px; /* Buton genişliğini sabitle */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.reading-status-buttons .btn.status-btn:hover {
+    background-color: #5a8ab8;
+}
+
+/* Kullanıcı Yorum ve Değerlendirme Bölümü */
+.user-review-section h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.user-rating-input {
+    margin-bottom: 20px;
+}
+
+.user-rating-input p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.user-rating-input .star-rating.interactive i {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.user-rating-input .star-rating.interactive i.hover,
+.user-rating-input .star-rating.interactive i.selected {
+    color: #ffc107;
+}
+
+.review-form .form-group {
+    margin-bottom: 15px;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.review-form textarea,
+.review-form input[type="text"],
+.review-form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 15px;
+    resize: vertical; /* Sadece dikey olarak boyutlandırmaya izin ver */
+}
+
+.review-form textarea:focus,
+.review-form input[type="text"]:focus,
+.review-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 154, 203, 0.5);
+}
+
+.personal-notes-section h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--primary-color);
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+}
+
+.btn-save-review {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-save-review:hover {
+    background-color: #5a8ab8;
+    transform: translateY(-2px);
+}
+
+/* Diğer Kullanıcı Yorumları Bölümü */
+.other-reviews-section h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.single-review-card {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.single-review-card .reviewer-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.single-review-card .star-rating.static.small {
+    margin-bottom: 10px;
+}
+
+.single-review-card .review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .book-detail-content {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .book-info-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .book-main-details {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .book-visuals {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reading-status-buttons {
+        width: 100%;
+        align-items: center; /* Butonları ortaya hizala */
+        flex-direction: row; /* Butonları yatay hizala */
+        justify-content: center;
+        flex-wrap: wrap; /* Gerekirse alta geçsinler */
+    }
+
+    .reading-status-buttons .btn.status-btn {
+        width: 45%; /* Daha dar ekranda yan yana iki buton */
+        max-width: 150px;
+    }
+
+    .user-review-section h2,
+    .other-reviews-section h2 {
+        font-size: 24px;
+    }
+
+    .auth-nav .user-icon-link {
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-title-detail {
+        font-size: 28px;
+    }
+    .book-author-detail {
+        font-size: 18px;
+    }
+    .book-cover-detail.placeholder {
+        width: 150px;
+        height: 225px;
+    }
+    .reading-status-buttons .btn.status-btn {
+        width: 100%; /* Tek tek alta diz */
+    }
+}

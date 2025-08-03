@@ -1,0 +1,232 @@
+/* Header */
+.main-header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    position: relative; /* autocomplete-results için position: absolute gerektiğinden parent'a relative veriyoruz */
+    z-index: 1000; /* Diğer öğelerin önüne gelmesi için, özellikle autocomplete sonuçları için */
+}
+
+/* Logo */
+.main-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Yeni eklenen img etiketi için stil */
+.main-header .logo .site-logo {
+    height: 40px; /* Logo yüksekliğini sabitleyelim */
+    width: auto; /* Oranını korusun */
+    display: block; /* Gereksiz boşlukları engellemek için */
+}
+
+.main-header .search-bar {
+    position: relative; /* autocomplete-results için relative */
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    overflow: visible; /* Autocomplete sonuçlarının taşmasına izin ver */
+    background-color: #f9f9f9;
+    flex-grow: 1; /* Genişlemesi için */
+    max-width: 500px; /* Maksimum genişlik */
+    margin: 0 20px; /* Logonun ve auth-nav'ın ortasında boşluk bırakmak için */
+}
+
+.main-header .search-bar input {
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.main-header .search-bar button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px; /* Font Awesome ikon boyutu için */
+    border-radius: 0 25px 25px 0; /* Sadece sağ kenarları yuvarlak */
+}
+
+.main-header .search-bar button:hover {
+    background-color: #5a8ab8;
+}
+
+.auth-nav .btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Link olarak kullanılabilir */
+    display: inline-block; /* Padding ve margin için */
+}
+
+.auth-nav .btn:hover {
+    background-color: #5a8ab8;
+}
+
+/* Header'daki aktif buton veya ikon linki için stil */
+.auth-nav .btn.active,
+.auth-nav .user-icon-link {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: default;
+    opacity: 1; /* Aktifken tam opaklık */
+    border-radius: 50%; /* Kullanıcı ikonu için */
+    width: 40px; /* İkonun genişliği */
+    height: 40px; /* İkonun yüksekliği */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-left: 10px; /* Diğer butonlardan ayırmak için */
+    transition: background-color 0.3s ease;
+}
+
+.auth-nav .btn.active:hover,
+.auth-nav .user-icon-link:hover {
+    background-color: #5a8ab8;
+    transform: none; /* Aktif halde veya ikon üzerinde animasyon olmasın */
+}
+
+/* Autocomplete Sonuçları Kutusu */
+.autocomplete-results {
+    position: absolute;
+    top: 100%; /* Arama çubuğunun hemen altına konumlandır */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    max-height: 300px; /* Maksimum yükseklik */
+    overflow-y: auto; /* Dikey kaydırma çubuğu */
+    z-index: 999; /* Header'ın hemen altında ama diğer içeriklerin üstünde */
+    display: none; /* Varsayılan olarak gizli */
+}
+
+/* Autocomplete Her bir sonuç öğesi */
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none; /* Son öğede alt çizgi olmasın */
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+
+.autocomplete-item img {
+    width: 40px; /* Kapak resmi boyutu */
+    height: 60px;
+    object-fit: contain; /* Resmi kutuya sığdırırken oranını koru */
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    flex-shrink: 0; /* Küçülmesini engelle */
+}
+
+.autocomplete-item .item-info {
+    flex-grow: 1;
+    white-space: normal; /* Metnin sarmalamasına izin ver */
+    overflow: hidden; /* Taşmayı gizle */
+}
+
+.autocomplete-item .item-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 3px;
+    font-size: 15px;
+    text-overflow: ellipsis; /* Metin taşarsa üç nokta göster */
+    overflow: hidden;
+    white-space: nowrap; /* Tek satırda tut */
+}
+
+.autocomplete-item .item-author {
+    font-size: 13px;
+    color: var(--light-text-color);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* Responsive Header */
+@media (max-width: 992px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px; /* Yan boşlukları azalt */
+    }
+    .main-header .search-bar {
+        width: 100%;
+        max-width: none; /* Tam genişlikte olsun */
+        margin: 0; /* Ortalanma boşluğunu kaldır */
+    }
+    .main-header .auth-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .auth-nav .btn,
+    .auth-nav .user-icon-link {
+        margin: 0 5px; /* Butonlar arası boşluğu azalt */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 10px 15px;
+    }
+    .main-header .search-bar input {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .main-header .search-bar button {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+    .main-header .logo .site-logo {
+        height: 35px; /* Logo boyutunu küçült */
+    }
+    .auth-nav .btn {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+    .auth-nav .user-icon-link {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .autocomplete-item {
+        padding: 8px 10px;
+    }
+    .autocomplete-item img {
+        width: 35px;
+        height: 50px;
+    }
+    .autocomplete-item .item-title {
+        font-size: 14px;
+    }
+    .autocomplete-item .item-author {
+        font-size: 12px;
+    }
+}

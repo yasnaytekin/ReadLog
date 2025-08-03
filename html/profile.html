@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Profili - ReadLog</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="profile-page">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../img/readlog.png" alt="ReadLog Logo" class="site-logo">
+            </a>
+        </div>
+        <div class="search-bar">
+    <input type="text" placeholder="Bir kitap ara...">
+    <button type="submit"><i class="fas fa-search"></i></button>
+    <div class="autocomplete-results">
+        </div>
+</div>
+        <nav class="auth-nav">
+            <a href="profile.html" class="user-icon-link">
+                <i class="fas fa-user-circle fa-2x"></i>
+            </a>
+            </nav>
+    </header>
+
+    <main class="profile-main-content">
+        <aside class="profile-sidebar">
+            <div class="profile-header-info">
+                <div class="profile-avatar-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-stats">
+                    <p>Follower:<span class="count">70</span></p>
+                    <p>Following:<span class="count">70</span></p>
+                </div>
+                <button class="btn btn-edit-profile">Profili Düzenle</button>
+            </div>
+
+            <nav class="profile-nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Reviews</a></li>
+                    <li><a href="#">Read Lists</a></li>
+                    <li><a href="#">Want To Read</a></li>
+                    <li><a href="#">Likes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="profile-content-area">
+            <section class="favorites-section">
+                <h2>Favorites</h2>
+                <div class="book-list-horizontal">
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                    </div>
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                    </div>
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                    </div>
+                    </div>
+            </section>
+
+            <section class="recent-activity-section">
+                <h2>Recent Activity</h2>
+                <div class="book-list-horizontal">
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                        <div class="star-rating static small">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                        <div class="star-rating static small">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="book-card-small">
+                        <div class="book-cover-small placeholder"></div>
+                        <div class="star-rating static small">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 ReadLog. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
